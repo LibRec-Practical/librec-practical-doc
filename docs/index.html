@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
+
 <body>
-  <div id="app"></div>
+  <nav>
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+  </nav>
+
+  <div id="app"> </div>
+  
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      search: 'auto', // 默认值
+      search: [
+        '/', // => /README.md
+        '/guide', // => /guide.md
+        '/get-started', // => /get-started.md
+        '/zh-cn/', // => /zh-cn/README.md
+        '/zh-cn/推荐系统完整文档', // => /zh-cn/README.md
+        '/en/', // => /en/README.md
+      ],
+      // 完整配置参数
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto', // or 'auto'
+        placeholder: '搜索',
+        // 支持本地化
+        placeholder: {
+          '/': '搜索',
+          '/zh-cn/': '搜索',
+          '/en': 'Type to search'
+        },
+        noData: 'No Results!',
+        // 支持本地化
+        noData: {
+          '/zh-cn/': '找不到结果',
+          '/en': 'No Results',
+          '/': '找不到结果'
+        },
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3
+      }
     }
   </script>
+  <script>
+    window.$docsify = {
+      name: 'LibRec实战',
+      repo: 'librec-practical',
+      
+      loadNavbar: true,
+      loadSidebar: true,
+      subMaxLevel: 2
+    }
+  </script>
+  <script src="//unpkg.com/docsify"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css"> -->
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css"> -->
 </body>
+
 </html>
